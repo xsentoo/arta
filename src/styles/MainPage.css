@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.main-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hero-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.home {
+  display: flex;
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+  height: 60vh; /* La section home prend toute la hauteur de l'écran */
+  text-align: center;
+  z-index: 1;
+}
+
+.home h1 {
+  font-size: 3.5rem;
+  font-family: "lubaline-regular-shine", sans-serif;
+  color: #fff;
+  margin: 0;
+  animation: fadeIn 3s ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Réduction de l'espace entre le h1 et les sections */
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 50vh;
+}
+
+section {
+  margin: 20px 0;
+  border-radius: 8px;
+  padding: 30px;
+  color: white;
+  z-index: 0;
+}
+
+/* Centrage horizontal des vidéos */
+.video-cards {
+  display: flex;
+  flex-direction: row; /* Les vidéos sont en ligne */
+  justify-content: center; /* Centrage horizontal */
+  align-items: center; /* Centrage vertical */
+  gap: 20px; /* Espacement entre les vidéos */
+  flex-wrap: wrap; /* Permet de passer en colonne sur petits écrans */
+  margin-top: 20px;
+  width: 100%;
+}
+
+.video-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  width: 30%; /* Taille adaptée pour avoir 3 vidéos sur une ligne */
+  max-width: 350px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Responsivité : Adaptation pour différentes tailles d'écran */
+@media (max-width: 1024px) {
+  .video-cards {
+    flex-wrap: wrap; /* Permet le passage en colonne */
+  }
+
+  .video-card {
+    width: 45%; /* Deux vidéos par ligne */
+  }
+}
+
+@media (max-width: 768px) {
+  .video-card {
+    width: 90%; /* Une vidéo par ligne */
+  }
+
+  .home h1 {
+    font-size: 2.5rem; /* Réduction de la taille du titre */
+  }
+}
